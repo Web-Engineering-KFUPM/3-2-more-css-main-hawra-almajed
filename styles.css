@@ -1,61 +1,18 @@
-/* More CSS.
-   Tip: Use the README for guidance.
-   
-   Important Instructions (Read Before You Start)
+* {
+  box-sizing: border-box;
+}
 
-    This lab contains two types of CSS work:
+.copy, .title {
+  font-size: 1.7rem;
+  font-weight: 650;
+  text-transform: capitalize;
+}
 
-    1. Some selectors must be written from scratch  
-        -You will create new CSS rules for certain classes or ids that currently have no styles.
-
-    2. Some selectors already have CSS rules defined 
-        -For these, do NOT create a new selector again.  
-        -Instead, add the required properties inside the existing rule.
-
-    What NOT to Do
-    Do not write duplicate selectors like this:
-
-    /* .card {
-      existing styles (add new style in the exiting selector).
-    } */
-
-    /* .card {
-      duplicate selector created again to add new styles.
-    } */
-*/
-
-/*
-  TODO 0: Link the style sheet using the link tag inside the head tag.
-*/
-
-/* TODO 1:
-  - Define CSS variables on :root for brand colors:
-      1. Define --brand variable and set a color value of #2563eb for primary UI elements
-      2. Define --brand-dark variable and set a darker color value of #1d4ed8 for hover states
-  - Apply a global box-sizing reset using the universal selector (hint use * selector).
-*/
-
-/* TODO 2:
-   - Give .site-header & .site-footer a subtle background using var(--card)
-   - Make the .tagline class a bit muted (use var(--muted))
-*/
-
-/* TODO 3:
-   - Set the color to the brand variable and make the text bold for the .color-demo .color-note class.
-   - Set the color to var(--muted) and the font size to 0.95rem for the .color-demo .muted class.
-   - Style the .bg-sample class: Make the width of 100%, set a minimum height of 80px, add padding 0.75 rem and margin-block 0.75 rem, round the corners using border-radius, set the text color to white, and apply a 135-degree linear gradient background starting from the brand color and ending with a green tone like linear-gradient(135deg, var(--brand), #22c55e).
-*/
-
-/* TODO 4:
-   - For the .inline-label class: make it behave like an inline-block element with small padding of 0.25rem and 0.5 rem and a border of width 1 px, type as solid line, and set color of value rgba(0, 0, 0, 0.18).
-   - For the .inline-label.alt class: ensure it stays inline with others but use a different border style e.g. dashed.
-*/
-
-/* TODO 5:
-   - For the .copy .title class: choose any font-size (use rem), a font-weight between 600–700,
-     and apply text-transform: capitalize.
-   - For the .copy .intro class: set the font-style to italic and slightly increase the line-height and set the top margin of 0.25 rem.
-*/
+.copy, .intro {
+  font-style: italic;
+  line-height: 1.2;
+  margin-top: .25rem;
+}
 
 /* TODO 6:
    - For the .toolbar class: make it a flex container, distribute items with space-between,
@@ -65,6 +22,8 @@
      wrapping items using flex-wrap as wrap, adding a gap of 0.75rem, and top margin of 0.75rem.
    - For the .product-grid .item class: Make each item flexible with a flex grow of 1px, flex shrinnk of 1px, and minimum width of 140px, set a minimum height of 90px, apply a soft background and rounded corners, center the content using flexbox, and make the text bold e.g. 700.
 */
+
+
 
 /* TODO 7:
   - .static-box: Add padding (0.5rem 0.75rem), round the corners (10px), apply a light gray background using rgba(0,0,0,0.05), and add bottom margin (0.5rem).
@@ -86,12 +45,50 @@ body {
   --muted: #6b7280;        /* muted text */
   --bg: #f6f7fb;           /* page background */
   --card: #ffffff;         /* card/background surfaces */
+  --brand: #2563eb;
+  --brand-dark: #1d4ed8;
 }
 
 .site-header,
 .site-footer {
   text-align: center;
   padding: 1.25rem;
+  background-color: var(--card);
+}
+
+.tagline {
+  color: var(--muted);
+}
+
+.color-demo, .color-note {
+  font-weight: bold;
+}
+
+.color-demo, .muted {
+  color: var(--muted);
+  font-size: .95rem;
+  padding: .75rem;
+  margin-block: .75rem;
+  border-radius: 50%;
+  color: white;
+  background: linear-gradient(135deg, var(--brand), #22c55e);
+}
+
+.bg-sample {
+  width: 100%;
+  min-height: 80px;
+  
+}
+
+.inline-label {
+  display: inline-block;
+  padding: .25rem .5rem;
+  border: solid 1px rgba(0, 0, 0, 0.18);
+}
+
+.inline-label.alt {
+  display: inline;
+  border-style: dashed;
 }
 
 .container {
@@ -116,6 +113,8 @@ body {
 .toolbar {
   padding: 0.5rem;
   border: 1px dashed rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
 }
 
 .position-stage {
