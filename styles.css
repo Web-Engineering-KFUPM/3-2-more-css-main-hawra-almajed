@@ -2,35 +2,6 @@
   box-sizing: border-box;
 }
 
-.copy, .title {
-  font-size: 1.7rem;
-  font-weight: 650;
-  text-transform: capitalize;
-}
-
-.copy, .intro {
-  font-style: italic;
-  line-height: 1.2;
-  margin-top: .25rem;
-}
-
-/* TODO 6:
-   - For the .toolbar class: make it a flex container, distribute items with space-between,
-     align them vertically in the center, and add a gap.
-   - For the .btn class: add padding, remove the default border, and provide hover feedback.
-   - For the .product-grid class: create a responsive flex grid by setting display:flex,
-     wrapping items using flex-wrap as wrap, adding a gap of 0.75rem, and top margin of 0.75rem.
-   - For the .product-grid .item class: Make each item flexible with a flex grow of 1px, flex shrinnk of 1px, and minimum width of 140px, set a minimum height of 90px, apply a soft background and rounded corners, center the content using flexbox, and make the text bold e.g. 700.
-*/
-
-
-
-/* TODO 7:
-  - .static-box: Add padding (0.5rem 0.75rem), round the corners (10px), apply a light gray background using rgba(0,0,0,0.05), and add bottom margin (0.5rem).
-*/
-
-/* Base CSS (already provided for you).*/
-
 html,
 body {
   margin: 0;
@@ -60,6 +31,10 @@ body {
   color: var(--muted);
 }
 
+.color-demo {
+  background: linear-gradient(135deg, var(--brand), #22c55e);
+}
+
 .color-demo, .color-note {
   font-weight: bold;
 }
@@ -71,7 +46,7 @@ body {
   margin-block: .75rem;
   border-radius: 50%;
   color: white;
-  background: linear-gradient(135deg, var(--brand), #22c55e);
+  text-align: center;
 }
 
 .bg-sample {
@@ -109,12 +84,75 @@ body {
   display: flex;
   gap: 1rem;
 }
-
+/* TODO 6:
+   - For the .toolbar class: make it a flex container, distribute items with space-between,
+     align them vertically in the center, and add a gap.
+   - For the .btn class: add padding, remove the default border, and provide hover feedback.
+   - For the .product-grid class: create a responsive flex grid by setting display:flex,
+     wrapping items using flex-wrap as wrap, adding a gap of 0.75rem, and top margin of 0.75rem.
+   - For the .product-grid .item class: Make each item flexible with a flex grow of 1px,
+    flex shrinnk of 1px, and minimum width of 140px, set a minimum height of 90px, apply a soft background and rounded corners, center the content using flexbox, and make the text bold e.g. 700.
+*/
 .toolbar {
   padding: 0.5rem;
   border: 1px dashed rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 20px 40px;
+}
+
+.btn {
+  padding: 20px;
+  border: 0;
+}
+
+.btn:hover {
+  background-color: var(--brand-dark);
+  transition: 1s;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: .75rem;
+  align-items: center;
+  font-weight: 700;
+  justify-content: space-between;
+}
+
+.product-grid .item {
+  display: flex;
+  flex-grow: 1px;
+  flex-shrink: 1px;
+  min-width: 140px;
+  min-height: 90px;
+  background-color: var(--brand);
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center
+}
+
+.static-box {
+  padding: .5rem .75rem;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.05);
+  margin-bottom: .5rem;
+}
+
+
+.copy, .title {
+  font-size: 1.7rem;
+  font-weight: 650;
+  text-transform: capitalize;
+}
+
+.copy, .intro {
+  font-style: italic;
+  line-height: 1.2;
+  margin-top: .25rem;
 }
 
 .position-stage {
